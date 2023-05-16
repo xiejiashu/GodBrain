@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef Name="BodyPartBionicBase" ParentName="BodyPartBase" Abstract="True">
+        <techLevel>Spacer</techLevel>
+        <thingCategories>
+            <li>BodyPartsBionic</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Item/Health/HealthItem</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.80</drawSize>
+            <color>(189,169,118)</color>
+        </graphicData>
+        <tradeTags>
+            <li>Bionic</li>
+        </tradeTags>
+        <techHediffsTags>
+            <li>Advanced</li>
+        </techHediffsTags>
+        <statBases>
+            <WorkToMake>26000</WorkToMake>
+        </statBases>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>Bionics</researchPrerequisite>
+            <recipeUsers>
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <HediffDef ParentName="AddedBodyPartBase">
+        <defName>GodBrain</defName>
+        <label>god brain</label>
+        <labelNoun>a god brain</labelNoun>
+        <description>An installed god brain.</description>
+        <descriptionHyperlinks>
+            <ThingDef>GodBrain</ThingDef>
+        </descriptionHyperlinks>
+        <spawnThingOnRemoved>GodBrain</spawnThingOnRemoved>
+        <woundAnchorRange>0</woundAnchorRange>
+        <displayWound>true</displayWound>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>9999.0</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+        <!--效果函数-->
+        <comps>
+            <li Class="GodBrain.HeadiffComp_GodBrain">
+            
+            </li>
+        </comps>
+    </HediffDef>
+
+    <ThingDef ParentName="BodyPartBionicBase">
+        <defName>GodBrain</defName>
+        <label>bionic brain</label>
+        <description>神格大脑。 凭借来自自由市场群的超高技术，它几乎在所有方面都优于生物大脑。 他几乎是无敌的.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>InstallGodBrain</RecipeDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Plasteel>15</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardMidFreq</li>
+        </thingSetMakerTags>
+        <statBases>
+            <Mass>0.3</Mass>
+        </statBases>
+    </ThingDef>
+
+    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+        <defName>InstallGodBrain</defName>
+        <label>install bionic brain</label>
+        <description>Install a bionic brain.</description>
+        <descriptionHyperlinks>
+            <ThingDef>GodBrain</ThingDef>
+            <HediffDef>GodBrain</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing god brain.</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>GodBrain</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>GodBrain</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <appliedOnFixedBodyParts>
+            <li>Brain</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>GodBrain</addsHediff>
+    </RecipeDef>
+</Defs>

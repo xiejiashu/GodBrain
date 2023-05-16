@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RecipeDef>
+        <defName>MakeGodBrain</defName>
+        <label>make god brain</label>
+        <description>Make a god brain.</description>
+        <jobString>Making god brain.</jobString>
+        <workAmount>10</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <StuffCategoryDef>Plasteel</StuffCategoryDef>
+                </filter>
+                <count>20</count>
+            </li>
+            <li>
+                <filter>
+                    <ThingDef>ComponentSpacer</ThingDef>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <StuffCategoryDef>Plasteel</StuffCategoryDef>
+            <ThingDef>ComponentSpacer</ThingDef>
+        </fixedIngredientFilter>
+        <product>GodBrain</product>
+        <researchPrerequisite>Bionics</researchPrerequisite>
+    </RecipeDef>
+</Defs>
