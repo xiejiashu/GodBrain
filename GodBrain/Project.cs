@@ -3,8 +3,24 @@ using Verse;
 
 namespace GodBrain
 {
+    public class HediffCompProperties_GodBrain : HediffCompProperties
+    {
+        public HediffCompProperties_GodBrain()
+        {
+            this.compClass = typeof(HeadiffComp_GodBrain);
+        }
+    }
+
     public class HeadiffComp_GodBrain : HediffComp
     {
+        public HediffCompProperties_GodBrain Props
+        {
+            get
+            {
+                return (HediffCompProperties_GodBrain)this.props;
+            }
+        }
+
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);

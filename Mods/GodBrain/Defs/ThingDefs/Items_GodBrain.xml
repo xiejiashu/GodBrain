@@ -52,11 +52,8 @@
             <partEfficiency>9999.0</partEfficiency>
             <betterThanNatural>true</betterThanNatural>
         </addedPartProps>
-        <!--效果函数-->
         <comps>
-            <li Class="GodBrain.HeadiffComp_GodBrain">
-            
-            </li>
+            <li Class="GodBrain.HediffCompProperties_GodBrain" />
         </comps>
     </HediffDef>
 
